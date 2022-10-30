@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina la palabra</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background: lightblue;
+            text-align: center;
+        }
+
+        .login {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            margin: 0 auto;
+            float: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Juego</h1>
+    <div class="col-lg-4 col-sm-8 col-xs-11 login">
+        <h3>Jugador 1 - Inicia sesión para jugar</h3>
+        <label for="jugador1">Nombre del jugador 1</label>
+        <input type="text" id="jugador1" class="form-control" placeholder="Nombre del jugador 1">
+        <br>
+    </div>
+    <br>
+    <div class="col-lg-4 col-sm-8 col-xs-11 login">
+        <h3>Jugador 2 - Inicia sesión para jugar</h3>
+        <label for="jugador2">Nombre del jugador 2</label>
+        <input type="text" id="jugador2" class="form-control" placeholder="Nombre del jugador 2">
+        <br>
+    </div>
+    <br>
+    <button class="btn btn-primary" onclick="agregarUsuario()">Iniciar Sesión</button>
+    <script>
+        function agregarUsuario() {
+            jugador1 = document.getElementById("jugador1").value;
+            jugador2 = document.getElementById("jugador2").value;
+
+            localStorage.setItem("jugador1", jugador1);
+            localStorage.setItem("jugador2", jugador2);
+
+            window.location = "game_page.html";
+        }
+    </script>
+</body>
+
+</html>
